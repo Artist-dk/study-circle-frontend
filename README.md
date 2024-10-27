@@ -39,9 +39,9 @@ If you not getting version of node and npm in output, then [install node](./inst
 - `npm install --save react-google-charts`
 - `npm install axios`
 - `npm i -D react-router-dom@latest`
-- `npm start`
 - `npm install js-cookie`
 - `npm install styled-components`
+- `npm start`
 
 4. Install back-end dependencies:
 - `npm init -y`
