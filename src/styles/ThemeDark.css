@@ -1,5 +1,6 @@
 /* Variables */
 :root {
+  --ul: #faa;
   --prime: red;
   --transp: transparent;
   --link: blue;
@@ -28,9 +29,12 @@
 
 /* Styles */
 .thA {
+    ul {
+      color: var(--ul);
+    }
   * {
       color: var(--f1);
-  }
+   }
   button, select, input[type=submit] {
       background: #333;
       color: #fff;

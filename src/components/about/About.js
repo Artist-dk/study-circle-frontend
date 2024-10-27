@@ -27,6 +27,15 @@ export default function About() {
             </div>
         </div>
     </div>
+    <div className="box-2">
+        <div className="mid">
+            <h1>IMPORTANT MESSAGE</h1>
+            <p>Welcome to Study Circle! Please note that this project is currently under development. As we work to enhance its features and security, the platform may have some vulnerabilities.
+            <br />    
+            <br />    
+            For this reason, we kindly request that you avoid posting any sensitive or personal data on this website. Your understanding and cooperation are greatly appreciated as we continue to improve and strengthen the platform. Thank you for being a part of our journey to create a better educational experience for everyone!</p>
+        </div>
+    </div>
     <div className="box-1">
         <div className="mid">
             <h1>OUR GOAL</h1>
@@ -49,3 +58,10 @@ export default function About() {
 </>
   )
 }
+
+
+
+
+// Welcome to Study Circle! Please note that this project is currently under development. As we work to enhance its features and security, the platform may have some vulnerabilities.
+
+// For this reason, we kindly request that you avoid posting any sensitive or personal data on this website. Your understanding and cooperation are greatly appreciated as we continue to improve and strengthen the platform. Thank you for being a part of our journey to create a better educational experience for everyone!
