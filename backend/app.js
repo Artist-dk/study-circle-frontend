@@ -13,6 +13,7 @@ const messageRoute = require('./routes/message')
 const settingsRoute = require('./routes/settings')
 const Authenticate = require('./middleware/authenticate')
 const upload = require('./config/multerConfig');
+const BASE_URL = require('./config/url');
 
 const accountController = require('./controllers/account')
 const messageController = require('./controllers/message')
@@ -49,8 +50,11 @@ app.use(express.static(staticPath));
 
 app.use( cors({
   // origin: '*',
-  origin: 'http://localhost:3000',
-  credentials:true
+  // origin: 'http://localhost:3000',
+  origin: 'http://192.168.0.21:3000', // React frontend origin
+  origin: BASE_URL, // React frontend origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  credentials: true, // Enable cookies if needed
 }));
 
 app.use((req, res, next) => {

@@ -64,7 +64,9 @@ const Api = {
   },
 
   login(formData) {
-    return makeRequest("login", "POST", formData).then((data) => {
+    // console.log(formData)
+    return makeRequest("login", "POST", formData)
+    .then((data) => {
       console.log("Login successful:", data);
       return data; 
     });
