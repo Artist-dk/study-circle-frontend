@@ -5,13 +5,8 @@
   .form-cont{
     display: grid;
     grid-template-columns:  auto;
-    /* background: white; */
     margin: 20px auto;
     max-width: 360px;
-    /* padding: 30px; */
-    box-sizing: border-box;
-    /* border: solid #aaaaaa50 1px; */
-    z-index: 10;
   }
   
   
