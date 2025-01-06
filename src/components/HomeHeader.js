@@ -3,17 +3,17 @@ import { Route,Routes, Link, useNavigate, Outlet } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 export default function HomeHeader() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    checkLoginStatus();
-  });
+  // useEffect(() => {
+  //   checkLoginStatus();
+  // });
 
-  const checkLoginStatus = () => {
-    if (!(Cookies.get('spy'))) {
-      navigate('/account')
-    }
-  };
+  // const checkLoginStatus = () => {
+  //   if (!(Cookies.get('spy'))) {
+  //     navigate('/account')
+  //   }
+  // };
   
     return (
       <>

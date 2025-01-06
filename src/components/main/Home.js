@@ -8,42 +8,42 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 export default function Home() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
   
-    useEffect(() => {
-      checkLoginStatus();
-    });
+    // useEffect(() => {
+    //   checkLoginStatus();
+    // });
 
-    const checkLoginStatus = () => {
-      if (!(Cookies.get('spy'))) {
-        navigate('/account')
-      }
-    };
+    // const checkLoginStatus = () => {
+    //   if (!(Cookies.get('spy'))) {
+    //     navigate('/account')
+    //   }
+    // };
   
-    const authenticateUser = () => {
-      try {
-          axios.get('http://localhost:8081/authenticate', 
-              {
-                  headers: {
-                      Accept: "*/*",
-                      "Content-Type": "application/json"
-                  },
-                  withCredentials: true
-              }
-          )
-          .then(function (response) {
-              console.log(response);
-          })
-          .catch(function (error) {
-              console.log(error);
-          });
-      } catch (error) {
-          console.log(error)
-      }
-    }
-    useEffect(() => {
-      authenticateUser();
-    },[]) 
+    // const authenticateUser = () => {
+    //   try {
+    //       axios.get('http://localhost:8081/authenticate', 
+    //           {
+    //               headers: {
+    //                   Accept: "*/*",
+    //                   "Content-Type": "application/json"
+    //               },
+    //               withCredentials: true
+    //           }
+    //       )
+    //       .then(function (response) {
+    //           console.log(response);
+    //       })
+    //       .catch(function (error) {
+    //           console.log(error);
+    //       });
+    //   } catch (error) {
+    //       console.log(error)
+    //   }
+    // }
+    // useEffect(() => {
+    //   authenticateUser();
+    // },[]) 
     function trackScroll() {
         const scrollPosition = window.scrollY || window.pageYOffset;
         // console.log("Current Scroll Position:", scrollPosition);
@@ -105,11 +105,11 @@ export default function Home() {
                 <Slider images={images} />
             </div>
         </div>
-        <div className="box-1">
+        {/* <div className="box-1">
             <div className="mid">
                 <AcademicProgressGraph data={academicProgressData} />
             </div>
-        </div>
+        </div> */}
         <div className="box-2">
             <div className="mid">
                 <h1>OUR GOAL</h1>
@@ -168,7 +168,7 @@ export default function Home() {
                             <div className="container">
                                 <h1>StudyCircle</h1>
                                 <div className="content">
-                                    <h2>Real-Time Feedback and Assessment comprehensivResource Library</h2>
+                                    <h2>Real-Time Feedback and Assessment Comprehensive Resource Library</h2>
                                     <p>Receive immediate feedback on assignments, quizzes, anassessments.</p>
                                 </div>
                             </div>
