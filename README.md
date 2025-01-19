@@ -86,3 +86,35 @@ For inquiries or feedback, feel free to contact the project maintainer at [digam
 
 
 # Test
+
+
+# Folder Structure 
+
+<pre>
+project-name/
+├── frontend/           # Frontend module
+│   ├── src/            # Source code for the frontend
+│   ├── public/         # Static assets (HTML, images, etc.)
+│   ├── package.json    # Node.js dependencies for frontend
+│   ├── webpack.config.js  # Build config (if applicable)
+│   └── README.md       # Documentation for frontend
+│
+├── backend/            # Backend module
+│   ├── src/            # Source code for the backend
+│   ├── config/         # Configuration files
+│   ├── package.json    # Node.js dependencies for backend (if using Node.js)
+│   ├── app.js          # Entry point for the backend (or main file)
+│   └── README.md       # Documentation for backend
+│
+├── tests/              # Testing module
+│   ├── frontend/       # Frontend tests
+│   ├── backend/        # Backend tests
+│   ├── integration/    # Full-stack or end-to-end tests
+│   ├── unit/           # Unit tests for both modules
+│   └── README.md       # Documentation for the testing strategy
+│
+├── .gitignore          # Common gitignore rules for the whole project
+├── README.md           # Main documentation file for the entire project
+├── LICENSE             # License file
+└── CONTRIBUTING.md     # Guidelines for contributing to the project
+</pre>
