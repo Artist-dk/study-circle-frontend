@@ -32,30 +32,17 @@ If you not getting version of node and npm in output, then [install node](./inst
 
 1. Clone the repository: `git clone https://github.com/Artist-dk/study-cricle.git`
 2. Navigate to the project folder: `cd study-circle`
-3. Install front-end dependencies: 
-- `npm install sass`
-- `npm i --save-dev dotenv`
-- `npm install react-router-dom`
-- `npm install --save react-google-charts`
-- `npm install axios`
-- `npm i -D react-router-dom@latest`
-- `npm install js-cookie`
-- `npm install styled-components`
+3. Install front-end dependencies:
+- `cd frontend/`   
+- `npm install --save-dev`
 - `npm start`
 
 4. Install back-end dependencies:
-- `npm init -y`
-- `npm install express mysql cors`
-- `npm i -g nodemon`
-- `npm install express-session express-mysql-session`
-- `nnodemon start`
+- `cd backend/`   
+- `npm install --save-dev`
+- `npm start`
 
 4. Set up the database and configuration: 
-
-## Usage
-
-1. Run the application: `npm start`
-2. Access the application in your web browser: `http://localhost:3000`
 
 ## Contributing
 
