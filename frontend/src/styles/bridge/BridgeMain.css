@@ -1,0 +1,55 @@
+.bridge-user-profile {
+  .expert-user {
+    max-width: 16em;
+    background: #0003;
+    backdrop-filter: blur(15px);
+    padding: 10px 5px;
+    border: solid 1px #aaaa;
+    display: grid;
+    grid-template-rows: 150px auto;
+    border-radius: 13px;
+    .row-1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* height: 120px; */
+      .img-cont {
+        border: solid 2px #aaa3;
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          height: 120px;
+          width: 120px;
+        }
+      }
+    }
+    .exper-user-details {
+      * {
+        text-align: center;
+      }
+      h2 {
+        font-size: 18px !important;
+      }
+      p {
+        font-size: 14px !important;
+        padding: 0;
+        margin: 0;
+        color: #aaa;
+      }
+    }
+    .row-3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      button {
+        border: 2px solid #aaaa;
+        background: transparent;
+        color: #aaaa;
+        padding: 5px 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,217 @@
+.lib-card-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  margin: 0 auto;
+}
+.lib-card-grid .lib-card1 .bg {
+  background: linear-gradient(45deg, red, black);
+  height: 10em;
+  border-radius: 25px 25px 50% 100%;
+}
+.lib-card-grid .lib-card1 .container {
+  padding: 20px;
+}
+.lib-card-grid .lib-card1 {
+  border: solid red 2px;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  box-shadow: 0 0 55px black;
+}
+.lib-card-grid .lib-card1 .container .content {
+  backdrop-filter: blur(3px);
+  background: linear-gradient(45deg, transparent, #00000040);
+  position: relative;
+  top: -25px;
+  left: -35px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  min-width: 100px;
+  width: fit-content;
+  border: solid white 1px;
+  box-shadow: 5px 5px 55px black;
+  z-index: 10;
+}
+.lib-card-grid .lib-card1 .container .content h2 {
+  text-align: center;
+  font-size: 36px;
+  margin: 10px 0 0 0;
+}
+.lib-card-grid .lib-card1 .container .content table {
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+.lib-card-grid .lib-card1 .container .content table td {
+  padding: 5px;
+}
+.lib-card-grid .lib-card1 h1 {
+  color: #ffffffaa;
+  font-size: 150px;
+  position: relative;
+  top: -105px;
+  z-index: 4;
+  height: 2px;
+}
+.categories-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.categories-list li {
+  list-style-type: none;
+  padding: 5px;
+  margin: 5px;
+  background: #333;
+  border: white 2px solid;
+  border-radius: 7px;
+  color: white;
+}
+.books-table {
+  width: 100%;
+}
+
+.books-table thead {
+  text-align: left;
+}
+
+.books-table thead tr th{
+  background: #444;
+  padding: 15px 10px;
+}
+
+.books-table tbody tr td{
+  padding: 15px 10px;
+}
+.books-table tbody tr:nth-child(odd){
+  background: #000;
+}
+.books-table tbody tr:nth-child(even){
+  background: #111;
+}
+
+
+
+
+
+/* form */
+.lib-form-container {
+  /* border: solid 2px; */
+  display: flex;
+  justify-content: center;
+  form {
+    border: solid #222 2px;
+    border-radius: 30px;
+    background: #111;
+    padding: 30px;
+    h1 {
+      font-size: 32px;
+      color: #aab;
+      margin: 20px 0;
+      span {
+        font-size: 40px;
+        color: #ff2c2c;
+      }
+    }
+    .row {
+      display: flex;
+      gap: 20px;
+      /* flex-wrap: wrap; */
+      margin: 0;
+      width: 100%;
+      .input-submit {
+        display: flex;
+        justify-content: right;
+      }
+      .input {
+        min-width: 300px;
+        width: 100%;
+        /* height: 52px; */
+        margin-top: 30px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        .input-label {
+          height: 0;
+          transform: translate(0,0px);
+          position: absolute;
+          padding: 5px;
+          display: block;
+          color: #aab;
+          font-size: 14px;
+        }
+        input, textarea, select {
+          background: #000;
+          border: solid 2px #222;
+          border-radius: 7px;
+          padding: 15px;
+          width: 100%;
+          font-size: 16px;
+          outline: none;
+          color-scheme: dark;
+        }
+        input[type=submit] {
+          background: #ff2c2c;
+          width: fit-content;
+          /* padding: 20px 30px ; */
+        }
+        input[type=submit] > div {
+          background: #ff2c2c;
+          width: fit-content;
+        }
+        input:focus,
+        textarea:focus,
+        select:focus{
+          border: solid 2px #544;
+        }
+        input:focus ~ label,
+        textarea:focus ~ label,
+        select:focus ~ label,
+        input:focus ~ label,
+        input:valid ~ label,
+        textarea:focus ~ label,
+        textarea:valid ~ label { 
+          color: red !important;
+        }
+        input:hover + label {
+          color: red !important;
+        }
+        select {
+          width: 100%;
+          padding: 15px;
+          text-indent: 5px;
+        }
+        option {
+          padding: 5px;
+          font-size: 16px;
+          padding: 15px;
+        }
+        textarea {
+          resize: vertical;
+        }
+        .input-label {
+          height: 0;
+          transform: translate(0,-25px);
+          position: absolute;
+        }
+        .error-msg {
+          color: #f00;
+          float: right;
+          height: 0;
+          margin: 0;
+          padding: 0;
+          transform: translateY(-80px);
+        }
+        .err {
+          color: #f55;
+        }
+      }
+    }
+  }
+}
+::-webkit-calendar-picker-indicator {
+  color: white;
+}

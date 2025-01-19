@@ -1,0 +1,119 @@
+
+
+
+.header {
+    overflow: hidden;
+    transition: .5s;
+    .row1, .row3 {
+        display:flex;
+        span {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+    .row1 {
+        .grow {
+            min-width: 0;
+            flex-grow: 2;
+            padding: 0;
+        }
+    }
+    .row3 {
+        justify-content: center;
+        overflow-x: auto;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 0;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    .row2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .title h1 {
+            font-size: 50px;
+            margin:0;
+            padding: 5px;
+            font-weight: bold;
+            font-family: cursive;
+            /* // font-family: 'Courier New', Courier, monospace; */
+            letter-spacing: 4px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        .row1, .row3 {
+            display:flex;
+            span {
+                font-size: 12px;
+            }
+        }
+        .row1 {
+            overflow-x: auto;
+            max-height: 40px;
+            .grow {
+                flex-grow: 3;
+            }
+        }
+        .row3 {
+            justify-content: left;
+            overflow-x: auto;
+            padding-right: 30px;
+        }
+        
+        .row2 {
+            .title h1 {
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .header {
+        .row1, .row3 {
+            display:flex;
+            span {
+                font-size: 12px;
+                padding: 7px 10px;
+            }
+        }
+        .row1 {
+            overflow-x: auto;
+            max-height: 40px;
+            .grow {
+                flex-grow: 3;
+            }
+        }
+        .row3 {
+            justify-content: left;
+            overflow-x: auto;
+            padding-right: 30px;
+        }
+        .row2 {
+            .title h1 {
+                font-size: 30px;
+            }
+        }
+    }
+}

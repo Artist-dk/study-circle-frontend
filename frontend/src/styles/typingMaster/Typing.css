@@ -1,0 +1,173 @@
+
+
+.typingmasterbody01 {
+    justify-content: center;
+}
+.display01, .text01 {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.center {
+    display: flex;
+    /* background-color: red; */
+    justify-content: center;
+
+}
+.display01 {
+    border-radius: 15px;
+    padding: 15px;
+    height: 100px;
+    width: 530px;
+    overflow: auto;
+    /* background-color: #111; */
+    color: white;
+    z-index: 2;
+    justify-self: center;
+    display: flex;span {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+.text01 {
+    position: absolute;
+    outline: none;
+    border: none;
+    z-index: 1;
+    color: transparent;
+    background-color: transparent;
+    resize: none;
+}
+.highlighter01 {
+    overflow: hidden;
+    position: absolute;
+    /* background-color: #00ff0050; */
+    z-index: 0;
+}
+.keyboard01 {
+    padding: 10px;
+    background-color: black;
+    width: 531px;
+    height: 180px;
+    border-radius: 10px;
+    border: solid 1px white;
+    /* box-sizing: border-box; */
+}
+.line01 {
+    padding: 2px;
+    height: 34px;
+    /* border: solid 1px #111; */
+    margin: 1px;
+    box-sizing: border-box;
+}
+.key01 {
+    min-width: 30px;
+    min-height: 30px;
+    box-sizing: border-box;
+    font-size: 12px;
+    display: inline-flexbox;
+    padding: -4px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    .bottom01 {
+        font-size: 10px;
+        position: relative;
+        top:5px;
+    }
+    .top01 {
+        /* font-size: 5px; */
+        height: 8px;
+        position: relative;
+        top: -5px;
+        font-size: 10px;
+    }
+}
+.llkey01 {
+    min-width: 40px;
+    min-height: 30px;
+}
+.tabkey01 {
+    width: 50px;
+}
+.capslockkey01 {
+    width: 60px;
+}
+.lshiftkey01 {
+    width: 80px;
+}
+.spacekey01 {
+    width: 215px;
+}
+.backspacekey01 {
+    width: 81px;
+}
+.backslashkey01 {
+    width: 61px
+}
+.enterkey01 {
+    width: 85px;
+}
+.rshiftkey01 {
+    width: 99px;
+}
+.keya01 {
+    background-color: rgb(255, 153, 153);
+}
+.keyb01 {
+    background-color: rgb(134, 211, 255);
+}
+.keyc01 {
+    background-color: rgb(68, 255, 78);
+}
+.keyd01 {
+    background-color: rgb(255, 212, 70);
+}
+.wrongtxt01 {
+    color: rgb(255, 92, 92);
+}
+.correcttxt01 {
+    color: rgb(0, 255, 0);
+}
+.reference01 {
+    display: none;
+}
+#caret01 {
+    background-color: rgb(0, 247, 255);
+    display: inline-block;
+    height: 20px;
+    width: 1px;
+    visibility: hidden;
+}
+.handContainter01 {
+    /* background-color: red; */
+    padding: 2px;
+    .fingerhighlighter01 {
+        position:relative;
+    }
+    .fingerhighlighter01 {
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        z-index: 10;
+        border-radius: 50%;
+    }
+    .finger1 {
+        top: 20px;
+    }
+    .finger2 {
+        top: 60px;
+    }
+    .finger3 {
+        top: 50px;
+    }
+    .finger4 {
+        top: 40px;
+    }
+    .finger5 {
+        top: 30px;
+    }
+}
+
+/* .handContainter01 {
+    border: solid 1px white;
+} */

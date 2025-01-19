@@ -1,0 +1,491 @@
+/* Variables */
+:root {
+  --ul: #faa;
+  --prime: red;
+  --transp: transparent;
+  --link: blue;
+  --err: #f00;
+  --warn: #ff0;
+  --alrt: #0f0;
+  --done: #fff;
+  --welbg: #000000aa;
+  --bglass: #11111155;
+  --fglass: #ffffff0f;
+  --shadow: #000;
+  --b1: #000;
+  --b2: #111;
+  --b3: #222;
+  --b4: #333;
+  --b5: #444;
+  --b6: #555;
+  --glassBorder: #433a;
+  --f1: #fff;
+  --f2: #eee;
+  --f3: #ddd;
+  --f4: #ccc;
+  --f5: #bbb;
+  --f6: #aaa;
+}
+
+/* Styles */
+.thA {
+    ul {
+      color: var(--ul);
+    }
+  * {
+      color: var(--f1);
+   }
+  button, select, input[type=submit] {
+      background: #333;
+      color: #fff;
+      border-color: #fff;
+  }
+  button:hover {
+      background: #fff;
+      color: #000;
+      border-color: #fff;
+  }
+  .welcome {
+      p {
+          color: var(--f1);
+      }
+      h1 {
+          color: var(--f1);
+          text-shadow: 0 0 10px var(--prime);
+      }
+      h1 .grad {
+          text-shadow: 0px 0px 15px var(--prime);
+      }
+      .welcome h1 span span {}
+      .welcome p {}
+      .btnarea {}
+      .btnarea .btn-wrapper {}
+      .btnarea .btn-wrapper .btn {
+          background: #fff2;
+          box-shadow: 0 0 5px #000;
+          backdrop-filter: blur(16px);
+          border: solid 1px #666a;
+      }
+      .btnarea .btn-wrapper .btn:hover {
+          background: var(--f1);
+          box-shadow: 0 0 15px var(--shadow);
+          transform: scale(1.1);
+      }
+      .btnarea button {
+          color: var(--f1);
+          background: linear-gradient(35deg, var(--prime) 0%, var(--b1) 100%);
+      }
+      .btnarea .btn-wrapper .btn:hover button {
+          box-shadow: 0 0 10px var(--shadow);
+      }
+      .h-box-2 {
+          background: var(--b5);
+      }
+      .h-box-1 {
+          color: var(--f3);
+          border-left: solid 10px black;
+      }
+  }
+  .form-cont {
+      form {
+          .msg {}
+          .i-cont {
+              i {}
+          }
+          .textareaBox {
+              div {
+                  textarea {
+                      background: var(--transp);
+                      border-bottom: solid 2px var(--f1);
+                      box-shadow: 0 5px 5px -5px var(--shadow);
+                  }
+                  ::-webkit-file-upload-button {
+                      background: var(--b1);
+                      color: var(--color-a);
+                  }
+                  .textarea-label {
+                      color: var(--cdpfg);
+                  }
+                  i {}
+                  textarea:valid ~ i,
+                  textarea:focus ~ i {
+                      background: var(--fglass);
+                  }
+                  textarea:valid ~ .textarea-label, 
+                  textarea:focus ~ .textarea-label {
+                      background: var(--transp);
+                      color: var(--done);
+                  }
+                  .error-msg {
+                      color: var(--err);
+                      background: var(--transp);
+                  }
+                  textarea:valid ~ .err {
+                      color: var(--err);
+                  }
+              }
+          }
+          .inputBox {
+              input[type="submit"] {
+                  border: solid 1px var(--f1);
+                  box-shadow: 0 5px 5px -5px var(--shadow);
+                  background: var(--b1);
+                  color: var(--f1);
+              }
+              input[type="submit"]:hover {
+                  background: var(--b1);
+              }
+              div {
+                  input {
+                      background: var(--transp);
+                      border-bottom: solid 2px var(--f1);
+                      box-shadow: 0 5px 5px -5px var(--shadow);
+                  }
+                  input[type="submit"] {
+                      box-shadow: 0 5px 5px -5px var(--shadow);
+                      color: var(--b1);
+                      background: var(--f1);
+                  }
+                  input[type="submit"]:hover {
+                      color: var(--b2);
+                      background: var(--f3);
+                  }
+                  input[type="file" i] {
+                      color: var(--color-f);
+                      background: var(--transp);
+                      border-bottom: solid 2px var(--color-c);
+                  }
+                  ::-webkit-file-upload-button {
+                      background: var(--b1);
+                      color: var(--color-a);
+                  }
+                  button {}
+                  .input-label {
+                      color: var(--cdpfg);
+                  }
+                  i {}
+                  input:valid ~ i,
+                  input:focus ~ i {
+                      background: var(--fglass);
+                  }
+                  input:valid ~ .input-label, 
+                  input:focus ~ .input-label {
+                      background: var(--transp);
+                      color: var(--done);
+                  }
+                  .error-msg {
+                      color: var(--err);
+                      background: var(--transp);
+                  }
+                  input:valid ~ .err {
+                      color: var(--err);
+                  }
+              }
+          }
+      }
+  }
+  .header {
+      background: linear-gradient(to bottom right, var(--prime) 0%, var(--b1) 35%);
+      .row1, .row3 {
+          span:hover {
+              background: var(--b3);
+          }
+      }
+      .row1, .row3 {
+          background: var(--b1);
+          color: var(--f1);
+          a {
+              background: var(--transp);
+              color: var(--f1);
+          }
+          a:hover {
+              background: var(--b2);
+              color: var(--f4);
+          }
+      }
+      .row2 {
+          .title h1 {
+              color: var(--f4);
+          }
+      }
+      .row3 {
+          position: sticky;
+          top: 10px;
+      }
+  }
+  a {
+      color: var(--link)
+  }
+  .page {}
+  .body-center {}
+  .loaded-page {}
+  svg {
+      background: var(--transp);
+      .path-1 {
+          fill: var(--b1);
+      }
+      .path-2 {
+          fill: var(--prime);
+      }
+      .path-3 {
+          fill: var(--b3);
+      }
+  }
+  h1, h2, h3, h4, h5, h6 {}
+  p {}
+  li {}
+  .box {
+      background: var(--transp);
+  }
+  .box-1 {
+      background: var(--b1);
+  }
+  .box-2 {
+      background: var(--b3);
+  }
+  .box-3 {}
+  .box-3 a {
+      color: var(--link);
+  }
+  .glass {
+      color: var(--f1);
+      background: var(--bglass);
+      box-shadow: 0 0 20px var(--shadow);
+      border: solid 1px var(--glassBorder);
+  }
+  .mid {
+      background: var(--transp);
+  }
+  .flex-box {}
+  .flex-box span {
+      border: solid 1px black;
+  }
+  .flex-box span:hover {
+      background: var(--cb);
+  }
+  .background {}
+  .background span {}
+  .background .block2 {}
+  .background .block3 {}
+  .background .block4 {}
+  .page {}
+  .footer {
+      background: var(--ca);
+      color: var(--cb);
+  }
+  .gallary {}
+  .card-2 {
+      background: var(--b2);
+      box-shadow: 0 0 15px var(--shadow);
+      img {}
+      .desc-cont {
+          h2 {
+              color: var(--f1);
+          }
+          p {
+              color: var(--f4);
+          }
+      }
+  }
+  .card-2 .desc-cont h1 {
+      color: var(--cbpfg);
+  }
+  .card-2 .desc-cont p {
+      color: var(--cbtfg);
+  }
+  .card-3 {
+      background: var(--cbpbg);
+      color: var(--cbpfg);
+  }
+  .card-3 p {}
+  .hid {}
+  .show {}
+  @keyframes svg {
+      0% {}
+      100% {}
+  }
+  .card-rib {
+      border: 1px solid #BBB;
+      background: #EEE;
+      box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 1);
+  }
+  .card-rib h1 {
+      color: #ccc;
+  }
+  .card-rib p {}
+  .card-rib .details {}
+  .card-rib .l-rib {}
+  .card-rib .l-rib span {
+      color: #FFF;
+      background: #ff5555;
+      background: linear-gradient(30deg, #ff0000 0%, #111111 100%);
+      box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  }
+  .card-rib .l-rib span::before {
+      border-left: 3px solid #ff3333;
+      border-top: 3px solid #ff3333;
+  }
+  .card-rib .l-rib span::after {
+      border-right: 3px solid #111111;
+      border-top: 3px solid #111111;
+  }
+  .card-rib .r-rib {}
+  .card-rib .r-rib span {
+      color: #FFF;
+      background: #79A70A;
+      background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+      box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  }
+  .card-rib .r-rib span::before {
+      border-left: 3px solid #79A70A;
+      border-top: 3px solid #79A70A;
+  }
+  .card-rib .r-rib span::after {
+      border-left: 3px solid transparent;
+      border-right: 3px solid #79A70A;
+      border-bottom: 3px solid transparent;
+      border-top: 3px solid #79A70A;
+  }
+  .form p {}
+  .bgSvg1 {
+      background: var(--b1);
+  }
+  .bgSvg2 {
+      background: var(--b3);
+  }
+  .list span {}
+  .list span a {
+      color: white;
+  }
+  .list span a:hover {
+      background: #ffffff22;
+      box-shadow: 0 0 10px #000;
+  }
+  .hidden {}
+  .php-err {
+      background: white;
+  }
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  background: var(--b1);
+}
+::-webkit-scrollbar-button {
+  background: var(--b1);
+  border: solid 2px var(--f3);
+}
+::-webkit-scrollbar-corner {
+  background: lime;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--f5);
+  border: solid 2px var(--b4);
+}
+::-webkit-scrollbar-track-piece {
+  background: var(--b4);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--b6);
+}
+
+/* Chat App */
+.chat-main-psudo {}
+.chat-main {
+  background: var(--b1);
+  .chat-head {
+      background: var(--b1); 
+      .grid-1 {
+          .img-cont {
+              img {}
+          }
+          .details-cont {
+              .name {}
+              .status {}
+          }
+          .btn-cont {
+              button {
+                  svg {}
+              }
+          }
+      }
+  }
+}
+.chat-body {
+  .first-msg-sug {
+      span {}
+      span:hover {}
+  }
+  .msg-body {}
+  .msg-cont-sent .msg-body {}
+  .msg-cont-sent .msg-bg {
+      background: var(--b1);
+      box-shadow: 0 0 10px var(--b1);
+  }
+  .msg-cont-received .msg-text {
+      color: var(--b1);
+  }
+  .msg-cont-received .msg-bg {
+      background: var(--f3);
+      box-shadow: 0 0 10px var(--b1);
+  }
+  .msg-cont-received .msg-img img {}
+  .msg-time span {
+      background: linear-gradient(45deg, var(--prime), var(--b1));
+  }
+}
+.chat-footer {
+  background: var(--b1);
+  .inputs input, .inputs button {
+      background: var(--b3);
+      color: var(--f1);
+  }
+  .inputs input {}
+  .inputs button {
+      svg {
+          fill: var(--f1);
+      }
+  }
+}
+
+/* Dashboard */
+.dashboard .body {
+  background: var(--b3);
+}
+.dashboard .lsidebar {
+  background: var(--b1);
+  color: var(--f1);
+  border-right: solid 1px var(--b3);
+}
+.dashboard .lsidebar .lsb-head .lsb-title div svg {}
+.dashboard .lsidebar .lsb-body span {}
+.dashboard .lsidebar .lsb-body span:hover {
+  background: var(--b2);
+}
+.dashboard .body {}
+.dashboard .main {}
+
+.dashboard-switch {}
+.lsidebar-show {}
+
+.icon {
+  background: var(--transp);
+  span {
+      background: var(--prime);
+  } 
+  span:nth-child(1) {}
+  span:nth-child(2) {}
+  span:nth-child(3) {}
+}
+.active-icon {
+  span:nth-child(1) {}
+  span:nth-child(2) {}
+  span:nth-child(3) {}
+}
+
+@media only screen and (max-width: 950px) {
+  .dashboard {}
+  .dashboard .body {}
+  .dashboard .lsidebar {}
+  .icon {}
+}
