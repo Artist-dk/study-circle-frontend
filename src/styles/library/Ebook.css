@@ -1,0 +1,79 @@
+.libraryebook {
+  .ebook-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    .ebook-container {
+      border: solid 1px #444a;
+      backdrop-filter: blur(15px);
+      background: #8881;
+      max-width: 600px;
+      height: fit-content;
+      width: fit-content;
+      .ghost {
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 11% 10px;
+        background: #334;
+        -webkit-clip-path: polygon(
+          0 0, 30px 0, 40px 20px, calc(100% - 40px) 20px, calc(100% - 30px) 0, 100% 0,
+          100% calc(100% - 40px), calc(100% - 30px)  calc(100% - 40px) , calc(100% - 40px) calc(100% - 20px), 40px calc(100% - 20px), 30px calc(100% - 40px) ,0 calc(100% - 40px), 0 0
+        );
+        clip-path: polygon(
+          0 0, 30px 0, 40px 20px, calc(100% - 40px) 20px, calc(100% - 30px) 0, 100% 0,
+          100% calc(100% - 40px), calc(100% - 30px)  calc(100% - 40px) , calc(100% - 40px) calc(100% - 20px), 40px calc(100% - 20px), 30px calc(100% - 40px) ,0 calc(100% - 40px), 0 0
+        );
+        flex-direction: row;
+        gap: 10px;
+        .ebook-image {
+          border: solid 7px transparent;
+          border-top: 0;
+          border-bottom: 0;
+          width: 200px;
+          min-height: 200px;
+          background: black;
+          border-radius: 7px;
+        }
+        .book-details div > * {
+          font-size: 14px;
+          padding: 0px;
+          margin: 0px;
+          max-width: 250px;
+          word-spacing: 0;
+          letter-spacing: 1px;
+          font-family:'Times New Roman', Times, serif;
+          margin-bottom: 7px !important;
+          text-align: center;
+        }
+        .book-details {
+          max-width: 300px;
+          div {
+            .grow {
+              flex-grow: 3;
+            }
+            h2 {
+              font-size: 18px;
+            }
+            .small {
+              font-size: 12px;
+              color: #f55;
+            }
+            p {
+              color: #aab;
+              margin-bottom: 2px;
+            }
+            .link {
+              color: #55f;
+              cursor: pointer;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
