@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react'
 import Footer from './footer'
-import Slider from './home/Slider'
+import ImageSlider from '../../common/ImageSlider'
 import AcademicProgressGraph from '../student/AcademicProgressGraph';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -73,7 +73,13 @@ export default function Home() {
 
     // Event listener for scroll event
     window.addEventListener("scroll", trackScroll);
-        const images = ["https://www.kcrw.com/best-of-2017/images-1/hero.jpg/image", "https://cdn.pixabay.com/photo/2016/12/05/21/55/super-woman-1885016_960_720.jpg", "https://media.istockphoto.com/id/1255487565/vector/india-landmark-global-travel-and-journey-paper-background-vector-design-template-used-for.jpg?s=2048x2048&w=is&k=20&c=Pb5nrb_Q7yj4ZSNlVO4rJr4Buf5T8TglczEYKRuerDs="];
+        const images = [
+            "https://marketplace.canva.com/EAFqqGQof14/1/0/1600w/canva-blue-minimalist-abstract-wave-linkedin-banner-jFsA3DjIRXM.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmYu03owCR-GDLMUwubWcmfZMvxn2bJUgSMw&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv-9kj-vHmBgL62VabJcscxVWyxoX1egpJos5deIce7IfB2XCOetlc4OaO180swzasQA&usqp=CAU",
+        ];
+    
+
         return (
     <div className="body home">
         <div className="h-box-1 welcome">
@@ -102,7 +108,7 @@ export default function Home() {
         </div>
         <div className="box-2">
             <div className="mid">
-                <Slider images={images} />
+                <ImageSlider images={images} />
             </div>
         </div>
         {/* <div className="box-1">
