@@ -1,0 +1,101 @@
+{
+  "registerUser": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "userName": "johndoe",
+    "email": "johndoe@example.com",
+    "password": "securepassword",
+    "confirmPassword": "securepassword",
+    "userType": "student",
+    "phoneNo": "1234567890",
+    "profilePictureURL": "https://example.com/profile.jpg",
+    "description": "A passionate learner"
+  },
+  "loginUser": {
+    "username": "johndoe",
+    "password": "securepassword"
+  },
+  "createCourse": {
+    "title": "JavaScript Basics",
+    "description": "Learn JavaScript from scratch",
+    "category": "Programming",
+    "duration": "4 weeks",
+    "instructor": "Jane Smith",
+    "price": 49.99,
+    "level": "Beginner"
+  },
+  "updateCourse": {
+    "title": "React Basics Updated",
+    "description": "Updated description",
+    "github_repo": "https://github.com/example/react-course-updated"
+  },
+  "enrollUser": {
+    "userId": "123",
+    "courseId": "456"
+  },
+  "trackLessonProgress": {
+    "lessonId": "789",
+    "userId": "123",
+    "courseId": "456",
+    "progress": "50%"
+  },
+  "createTest": {
+    "title": "JavaScript Quiz",
+    "courseId": "456",
+    "questions": [
+      {
+        "question": "What is JavaScript?",
+        "options": [
+          "Language",
+          "Library",
+          "Framework"
+        ],
+        "answer": "Language"
+      }
+    ]
+  },
+  "sendMessage": {
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "subject": "Inquiry",
+    "message": "I need help with my course."
+  },
+  "saveMessage": {
+    "recipientId": 2,
+    "messageType": "other",
+    "messageContent": "Miscellaneous file"
+  },
+  "addNewBook": {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "pages": "180",
+    "language": "English",
+    "book_type": "ebook",
+    "publication_date": "1925-04-10",
+    "publisher": "Charles Scribner's Sons",
+    "genre": "Fiction",
+    "edition": "First",
+    "price": "10.99",
+    "description": "A novel by F. Scott Fitzgerald.",
+    "cover_image_url": "https://example.com/great-gatsby-cover.jpg",
+    "book_file": {}
+  },
+  "enrollPost": {
+    "courseId": 3
+  },
+  "test": {
+    "name": "New Test",
+    "description": "This is a new test."
+  },
+  "updateTest": {
+    "name": "Updated Test",
+    "description": "This is an updated test."
+  },
+  "contactUs": {
+    "firstname":"digambar",
+    "lastname":"kumbhar",
+    "phoneno":"9970036430",
+    "emailid":"digambarckumbhar2001@gmail.com",
+    "message":"This is message"
+  }
+}

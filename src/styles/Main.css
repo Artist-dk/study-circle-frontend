@@ -19,6 +19,9 @@
 @import url("./Main.css");
 /* @import url("./Putla.css"); */
 @import url("./components/Main.css");
+@import url("./components/CourseCard.css");
+@import url("./pages/CourseListing.css");
+
 /* @import url("./Typing.css"); */
 
 @import url('./student/Discussion.css');

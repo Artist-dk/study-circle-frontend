@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movable Rotating Spot Lights</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    /* Full-screen background */
+    .background {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: #222; /* Dark background for contrast */
+    }
+    
+    /* Container for spotlights behind the glass */
+    .spot-lights {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; /* Behind the glass */
+    }
+    
+    /* Orbit container to make spotlights rotate in a circular path */
+    .orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      /* Custom properties: --radius sets the orbit distance, --duration sets the orbit speed */
+      animation: rotateOrbit var(--duration) linear infinite;
+    }
+    
+    /* Animated red spotlights */
+    .spot-light {
+      position: absolute;
+      top: 0;
+      left: var(--radius); /* Offset the spotlight from the center */
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 0, 0, 0.5);
+      border-radius: 50%;
+    }
+    
+    /* Keyframes to rotate the orbit container */
+    @keyframes rotateOrbit {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    /* Glass effect container */
+    .glass {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80vw;
+      height: 80vh;
+      background: rgba(255, 255, 255, 0.1); /* translucent white */
+      border-radius: 10px;
+      backdrop-filter: blur(15px); /* glass blur effect */
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      z-index: 2; /* In front of the spotlights */
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <!-- Rotating spotlights rendered behind the glass -->
+    <div class="spot-lights">
+      <!-- First orbit: spotlight rotates in a circle with a radius of 150px over 5s -->
+      <div class="orbit" style="--radius: 150px; --duration: 15s;">
+        <div class="spot-light"></div>
+      </div>
+      <!-- Second orbit: spotlight rotates in a circle with a radius of 200px over 7s -->
+      <div class="orbit" style="--radius: 200px; --duration: 17s;">
+        <div class="spot-light"></div>
+      </div>
+    </div>
+    <!-- Glass container with a frosted effect -->
+    <div class="glass"></div>
+  </div>
+</body>
+</html>
