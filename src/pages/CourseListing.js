@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { fetchCourses } from '../services/newApis';
+import { fetchCourses, enrollUser } from '../services/newApis';
 import CourseCard from '../components/CourseCard';
+// import { enrollInCourse } from "../api";
 
 const CourseListing = () => {
     const [courses, setCourses] = useState([]);
@@ -39,7 +40,7 @@ const CourseListing = () => {
             ) : courses.length > 0 ? (
                 <div className="grid">
                     {courses.map((course) => (
-                        <CourseCard key={course.id} course={course} />
+                        <CourseCard key={course.id} course={course} api={enrollUser} />
                     ))}
                 </div>
             ) : (
