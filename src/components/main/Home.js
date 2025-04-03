@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import CourseListing from '../../pages/CourseListing';
+import Lesson from '../Lesson';
 
 export default function Home() {
     // const navigate = useNavigate();
@@ -109,7 +110,8 @@ export default function Home() {
             </div>
             <div className="box-2">
                 <div className="mid">
-                    <ImageSlider images={images} />
+                    {/* <ImageSlider images={images} /> */}
+                    <Lesson lessonId="lesson-1" />
                 </div>
             </div>
             <div className="box-2">
