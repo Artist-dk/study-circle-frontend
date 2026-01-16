@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route, Navigate, useNavigate} from 'react-router
 import Cookies from 'js-cookie';
 import './styles/Main.css';
 
+import ApiTester from './components/ApiTester';
+
 import HomeHeader from './components/HomeHeader';
 import Home from './components/main/Home';
 import About from './components/about/About';
@@ -47,6 +49,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomeHeader />}>
           <Route index element={<Home />} />
+          <Route path="api-test" element={<ApiTester />} />
           <Route path="about" element={<About />} />
           <Route path="contactus" element={<Contactus />} />
           <Route path="settings" element={<Settings />} />
@@ -88,3 +91,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+

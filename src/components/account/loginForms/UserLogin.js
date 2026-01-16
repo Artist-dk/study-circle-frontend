@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
-// import Cookies from 'js-cookie';
+import Cookies from 'js-cookie';
 // import axios from 'axios';
 
 import Api from '../../../services/api'
@@ -19,8 +19,8 @@ export default function UserLogin() {
             password: password
         })
         .then((res) => {
-            // console.log(res);
-            // console.log(Cookies.get('spy'))
+            console.log(res);
+            console.log(Cookies.get('spy'))
             navigate('/')
         })
         .catch((err) => {

@@ -25,6 +25,7 @@ function handleError(error) {
 }
 
 function makeRequest(endpoint, method, data) {
+  console.log(data);
   let url = `${apiEnv.url}/${endpoint}`;
   if (method === 'GET' && data) {
     const queryParams = new URLSearchParams(data);
@@ -50,22 +51,40 @@ function makeRequest(endpoint, method, data) {
 
 const Api = {
   createNewAccount(formData) {
-    console.log(formData)
-    return makeRequest("account/createnew", "POST", formData).then((data) => {
+    console.log("api.js", formData)
+    return makeRequest("user/register", "POST", formData).then((data) => {
       console.log("Form data submitted:", data);
     });
   },
 
   logout() {
-    return makeRequest("logout", "GET").then((data) => {
+    return makeRequest("user/logout", "GET").then((data) => {
       console.log("Logout successful:", data);
       return true;
     });
   },
 
+  login1() {
+    fetch("http://localhost:8081/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",   // VERY IMPORTANT
+      body: JSON.stringify({
+        username: "varsha",
+        password: "varsha"
+      }),
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log("Login response:", data);
+    });
+  },
+  //
   login(formData) {
     // console.log(formData)
-    return makeRequest("login", "POST", formData)
+    return makeRequest("user/login", "POST", formData)
     .then((data) => {
       console.log("Login successful:", data);
       return data; 
