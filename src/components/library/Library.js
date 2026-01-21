@@ -38,48 +38,48 @@ const Library = () => {
     };
     
   
-    const sendFormData = async (e) => {
-        e.preventDefault();
-        var dt = new FormData(e.target)
-        dt.append('file', fileInputRef.current.files[0]);
-        dt = Array.from(dt.keys()).reduce((r, k) => {
-            r[k] = dt.get(k);
-            return r;
-        }, {});
+    // const sendFormData = async (e) => {
+    //     e.preventDefault();
+    //     var dt = new FormData(e.target)
+    //     dt.append('file', fileInputRef.current.files[0]);
+    //     dt = Array.from(dt.keys()).reduce((r, k) => {
+    //         r[k] = dt.get(k);
+    //         return r;
+    //     }, {});
         
-        dt = JSON.stringify(dt)
+    //     dt = JSON.stringify(dt)
 
 
-    const formData = new FormData(formRef.current);
-    console.log(dt)
+    // const formData = new FormData(formRef.current);
+    // console.log(dt)
 
-    // Handle file upload specifically (if needed)
-    const selectedFile = fileInputRef.current.files[0];
-    if (selectedFile) {
-      formData.append('file', selectedFile);
-    }
+    // // Handle file upload specifically (if needed)
+    // const selectedFile = fileInputRef.current.files[0];
+    // if (selectedFile) {
+    //   formData.append('file', selectedFile);
+    // }
 
-    const headers = {
-      // Add your custom headers here
-      'Content-Type': 'multipart/form-data', // Usually needed for file uploads
-      'Authorization': 'Bearer YOUR_ACCESS_TOKEN', // Example for authorization header
-    };
+    // const headers = {
+    //   // Add your custom headers here
+    //   'Content-Type': 'multipart/form-data', // Usually needed for file uploads
+    //   'Authorization': 'Bearer YOUR_ACCESS_TOKEN', // Example for authorization header
+    // };
 
-    try {
-      const response = await fetch('http://localhost:8081/library/add-new-book', {
-        method: 'POST',
-        body: dt,
-      });
+    // try {
+    //   const response = await fetch('http://localhost:8081/library/add-new-book', {
+    //     method: 'POST',
+    //     body: dt,
+    //   });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+    //   if (!response.ok) {
+    //     throw new Error(`HTTP error! status: ${response.status}`);
+    //   }
 
-      const data = await response.json();
-      console.log('Success:', data);
-    } catch (error) {
-      console.error('Error:', error);
-    }
+    //   const data = await response.json();
+    //   console.log('Success:', data);
+    // } catch (error) {
+    //   console.error('Error:', error);
+    // }
     
 
 
@@ -95,24 +95,61 @@ const Library = () => {
 
 
 
-        // Api.addNewBook(dt)
-        // .then(response => {
-        //     console.log('Form submitted successfully:', response);
-        // })
-        // .catch(error => {
-        //     console.error('Error submitting form:', error);
-        // });
+    //     // Api.addNewBook(dt)
+    //     // .then(response => {
+    //     //     console.log('Form submitted successfully:', response);
+    //     // })
+    //     // .catch(error => {
+    //     //     console.error('Error submitting form:', error);
+    //     // });
 
-        // axios.post('http://localhost:8081/library/add-new-book', dt, {
-        //     headers: {'Content-Type': 'multipart/form-data'}
-        // })
-        // .then(response => {
-        //     console.log('Form submitted successfully:', response.data);
-        // })
-        // .catch(error => {
-        //     console.error('Error submitting form:', error);
-        // });
-    };
+    //     // axios.post('http://localhost:8081/library/add-new-book', dt, {
+    //     //     headers: {'Content-Type': 'multipart/form-data'}
+    //     // })
+    //     // .then(response => {
+    //     //     console.log('Form submitted successfully:', response.data);
+    //     // })
+    //     // .catch(error => {
+    //     //     console.error('Error submitting form:', error);
+    //     // });
+    // };
+
+
+const sendFormData = async (e) => {
+  e.preventDefault();
+
+  // ✅ Create FormData directly from form
+  const formData = new FormData(formRef.current);
+
+  // ✅ Debug (IMPORTANT – check this once)
+  console.log("FormData entries:");
+  for (let pair of formData.entries()) {
+    console.log(pair[0], pair[1]);
+  }
+
+  try {
+    const response = await fetch(
+      "http://localhost:8081/library/add-new-book",
+      {
+        method: "POST",
+        body: formData, // ✅ SEND FormData
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error("Upload failed:", data);
+      return;
+    }
+
+    console.log("Book added successfully:", data);
+
+  } catch (error) {
+    console.error("Upload error:", error);
+  }
+};
+
 
     function fetchLibraryMainData() {
         

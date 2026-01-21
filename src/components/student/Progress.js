@@ -1,6 +1,6 @@
 import { Chart } from "react-google-charts";
 import React from 'react';
-
+import "./Progress.css";
 
 var data = [
     // [

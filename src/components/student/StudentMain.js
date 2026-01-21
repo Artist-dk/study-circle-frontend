@@ -12,22 +12,10 @@ export default function StudentMain() {
 
   const checkLoginStatus = () => {
     if (!(Cookies.get('spy'))) {
-      navigate('/account')
+      // navigate('/account')
       console.log("You are not loged in!")
     }
   };
-
-  useEffect(() => {
-  fetch("http://localhost:8081/user/profile", {
-    credentials: "include",
-  })
-    .then(res => res.json())
-    .then(data => {
-      if (data.success) {
-        setUser(data.user);
-      }
-    });
-}, []);
 
 
   function open(e) {
@@ -221,6 +209,16 @@ export default function StudentMain() {
 
                   </div>
                   <span>LOGOUT</span>
+                </div>
+              </div>
+            </Link>
+            <Link to='/discussion'>
+              <div>
+                <div className="stdlsb-li">
+                  <div className="stlsb-li-icon">
+
+                  </div>
+                  <span>DISCUSSION</span>
                 </div>
               </div>
             </Link>

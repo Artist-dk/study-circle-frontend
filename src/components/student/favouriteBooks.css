@@ -1,0 +1,104 @@
+.books-section {
+  margin-top: 40px;
+  background: #ffffff;
+  color: black;
+  padding: 24px;
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.books-section h2 {
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: black;
+}
+
+/* Input */
+.books-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+  color: black;
+}
+
+.books-input input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  color: black;
+}
+
+.books-input button {
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  color: black;
+}
+
+/* Grid */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  color: black;
+}
+
+/* Card */
+.book-card {
+  background: #f9fafb;
+  padding: 18px;
+  border-radius: 18px;
+  text-align: center;
+  position: relative;
+  color: black;
+}
+
+.book-icon {
+  font-size: 34px;
+  margin-bottom: 8px;
+  color: black;
+}
+
+.book-card h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: #111827;
+  color: black;
+}
+
+.book-card p {
+  font-size: 13px;
+  color: #4b5563;
+  color: black;
+}
+
+.book-card button {
+  margin-top: 10px;
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  font-size: 13px;
+  cursor: pointer;
+  color: black;
+}
+
+/* Hover */
+.book-card:hover {
+  transform: translateY(-3px);
+  transition: 0.3s ease;
+  color: black;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .books-input {
+    flex-direction: column;
+  color: black;
+  }
+}

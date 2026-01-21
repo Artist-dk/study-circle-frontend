@@ -34,20 +34,23 @@ import CollegeLogin from './components/account/loginForms/CollegeLogin';
 
 import StudentMain from './components/student/StudentMain';
 import StudentProfile from './components/student/StudentProfile';
-import StudentDiscussion from './components/student/Discussion';
+import StudentDiscussion from './components/student/GroupDiscussion';
 import StudentAssignment from './components/student/Assignment';
 import LibraryMain from './components/library/LibraryMain';
-// import StudentNotice from './components/student/Notice';
-// import StudentProgress from './components/student/Progress';
-// import StudentResult from './components/student/Result';
-// import StudentTodo from './components/student/Todo';
+import StudentNotice from './components/student/NoticeBoard';
+import StudentProgress from './components/student/FavouriteBooks';
+import StudentResult from './components/student/TodoPlanner';
+import StudentTodo from './components/student/KeepRecords';
+import Discussion from './components/student/Discussion';
 
+import StudentCalendar from './components/student/StudentCalendar';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomeHeader />}>
+        <Route path="/" element={<HomeHeader />}>{/* element={<HomeHeader />} */}
+        {/* <Route path="/" element={<StudentCalendar />}>element={<HomeHeader />} */}
           <Route index element={<Home />} />
           <Route path="api-test" element={<ApiTester />} />
           <Route path="about" element={<About />} />
@@ -82,10 +85,11 @@ export default function App() {
           <Route index element={<StudentProfile />} />
           <Route path="discussion" element={<StudentDiscussion />} />
           <Route path="assignment" element={<StudentAssignment />} />
-          {/* <Route path="notice" element={<StudentNotice />} /> */}
-          {/* <Route path="progress" element={<StudentProgress />} /> */}
-          {/* <Route path="result" element={<StudentResult />} /> */}
-          {/* <Route path="todo" element={<StudentTodo />} /> */}
+          <Route path="notice" element={<StudentNotice />} />
+          <Route path="progress" element={<StudentProgress />} />
+          <Route path="result" element={<StudentResult />} />
+          <Route path="todo" element={<StudentTodo />} />
+          <Route path="discussion" element={<Discussion />} />
         </Route>
       </Routes>
     </BrowserRouter>

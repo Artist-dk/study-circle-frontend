@@ -2,7 +2,7 @@
 
 
 /* // chat app */
-
+/* 
 .main {
     box-sizing: border-box;
     max-height: 100vh;
@@ -41,7 +41,6 @@
                         height: 50px;
                         border-radius: 50%;
                         background-size: contain;
-                        /* background-size: cover; */
                     }
                 }
                 .details-container {
@@ -76,7 +75,6 @@
                 div {
                     .sayhi {
                         color: #282828;
-                        /* animation: sayHi 3s 1s infinite linear; */
                         text-align: center;
                         margin: 0;
                         padding: 0;
@@ -97,14 +95,12 @@
             overflow: hidden;
             .chat-head {
 
-                /* background-color: red; */
                 .grid-1 {
                     display: flex;
                     align-items: center;
                     height: 70px;
                     gap: 10px;
                     .contacts-icon {
-                        /* position: absolute; */
                         background: #333;
                         height: 40px;
                         width: 40px;
@@ -118,11 +114,9 @@
                         cursor: pointer;
                         transition: 1s;
                         overflow: hidden;
-                        /* transform: translateX(50px); */
                         z-index: 10;
                         span{
                             background: white;
-                            /* position: absolute; */
                             display: block;
                             height: 4px;
                             width: 30px;
@@ -168,7 +162,6 @@
                         height: 0;
                     }
                     .contact-head {
-                      /* margin: 5px; */
                       .contact-head-main {
                         border-radius: 13px;
                         display: flex;
@@ -233,7 +226,6 @@
                 justify-content: right;
                 span {
                     font-size: 10px;
-                    /* margin-right: 16px; */
                     padding: 1px 5px;
                     transform: translateY(-6px);
                     border-radius: 5px;
@@ -342,7 +334,6 @@
         }   
     } 
 }
-/*  */
 @keyframes sayHi {
     0% {
         color:#333;
@@ -350,7 +341,7 @@
     20% {
         color: #222;
     }
-}
+} */
 
 /* 
 .chat-footer {

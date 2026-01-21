@@ -1,0 +1,88 @@
+/* Main container */
+.box-3 {
+  color: black;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0f172a; /* dark background */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Middle content wrapper */
+.mid {
+  color: black;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #020617;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Navigation bar */
+.todo-nav {
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #020617;
+  padding: 12px 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+}
+
+/* Nav items */
+.todo-nav span {
+  color: black;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.todo-nav span:hover {
+  color: black;
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+/* Active tab */
+.todo-nav .active {
+  color: black;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Chart container fixes */
+.react-google-chart,
+svg {
+  border-radius: 10px;
+}
+
+/* Loader text */
+div[data-testid] {
+  color: #e5e7eb;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .todo-nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .todo-nav span {
+    font-size: 13px;
+  }
+
+  .mid {
+    padding: 15px;
+  }
+}

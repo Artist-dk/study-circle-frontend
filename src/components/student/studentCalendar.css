@@ -1,0 +1,103 @@
+.student-calendar {
+  width: 320px;
+  background: #020617;
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 15px;
+  font-family: system-ui;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.student-calendar h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Controls */
+.calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.calendar-controls select {
+  flex: 1;
+  background: #020617;
+  color: #e5e7eb;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+/* Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.calendar-weekdays span {
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* Days */
+.calendar-day {
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.calendar-day:hover {
+  background: #1e293b;
+}
+
+.calendar-day.selected {
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+/* Selected info */
+.selected-info {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #93c5fd;
+}
+
+
+
+/* -------------------------------------------------------------- */
+
+
+/* Highlight types */
+.highlight-holiday {
+  background: #16a34a;
+  color: white;
+  font-weight: 600;
+}
+
+.highlight-exam {
+  background: #dc2626;
+  color: white;
+  font-weight: 600;
+}
+
+.highlight-event {
+  background: #7c3aed;
+  color: white;
+  font-weight: 600;
+}
+
+/* Keep hover effect */
+.calendar-day.highlight-holiday:hover,
+.calendar-day.highlight-exam:hover,
+.calendar-day.highlight-event:hover {
+  filter: brightness(1.1);
+}
