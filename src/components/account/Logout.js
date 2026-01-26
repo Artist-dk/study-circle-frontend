@@ -12,7 +12,7 @@ export default function Logout() {
         console.log("logged out")
         navigate('/account')
         try {
-            axios.get('http://localhost:8081/logout',
+            axios.get('http://localhost:8081/user/logout',
                 {
                     headers: {
                         Accept: "*/*",

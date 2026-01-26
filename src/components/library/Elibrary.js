@@ -20,7 +20,7 @@ function ELibrary() {
         print();
     }, [ebooks]);
 
-    // 🔹 Pagination logic (SAFE)
+    // Pagination logic
     const totalPages = ebooks.result
         ? Math.ceil(ebooks.result.length / BOOKS_PER_PAGE)
         : 0;
@@ -80,11 +80,7 @@ function ELibrary() {
                     {currentBooks.map(el => (
                         <div key={el.id} className="ebook-container">
                             <div className="ghost">
-                                <img
-                                    className="ebook-image"
-                                    src={img}
-                                    alt={el.title}
-                                />
+                                <img className="ebook-image" src={img} alt={el.title} />
                                 <div className="book-details">
                                     <div>
                                         <h2 className="book-title">{el.title}</h2>
@@ -106,28 +102,19 @@ function ELibrary() {
                     ))}
                 </div>
 
-                {/* PAGINATION CONTROLS (NO STYLE CHANGE) */}
+                {/* PAGINATION CONTROLS */}
                 <div className="pagination">
-                    <button
-                        disabled={currentPage === 1}
-                        onClick={() => setCurrentPage(p => p - 1)}
-                    >
+                    <button disabled={currentPage === 1} onClick={() => setCurrentPage(p => p - 1)}>
                         Prev
                     </button>
 
                     {Array.from({ length: totalPages }, (_, i) => (
-                        <button
-                            key={i}
-                            onClick={() => setCurrentPage(i + 1)}
-                        >
+                        <button key={i} onClick={() => setCurrentPage(i + 1)}>
                             {i + 1}
                         </button>
                     ))}
 
-                    <button
-                        disabled={currentPage === totalPages}
-                        onClick={() => setCurrentPage(p => p + 1)}
-                    >
+                    <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(p => p + 1)}>
                         Next
                     </button>
                 </div>

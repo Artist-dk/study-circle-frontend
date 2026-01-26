@@ -1,6 +1,6 @@
 // src/App.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useNavigate} from 'react-router-dom';
 import Cookies from 'js-cookie';
 import './styles/Main.css';
@@ -45,66 +45,90 @@ import Discussion from './components/student/Discussion';
 
 import StudentCalendar from './components/student/StudentCalendar';
 import TestMain from './components/test/TestMain';
+import ProtectedRoute from './components/ProtectedRoute';
+
+import axios from 'axios';
+
+// example of useContext 
+import AuthContext, { AuthProvider } from "./context/AuthContext";
+axios.defaults.withCredentials = true;
+
 
 export default function App() {
+  
+  const { auth, loading } = useContext(AuthContext);
+  useEffect(() => console.log(auth), [])
+
+  // STOP routing until auth is checked
+  if (loading) {
+    return <div>Checking authentication...</div>;
+  }
+
+  
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomeHeader />}>{/* element={<HomeHeader />} */}
-        {/* <Route path="/" element={<StudentCalendar />}>element={<HomeHeader />} */}
-          <Route index element={<Home />} />
-          <Route path="api-test" element={<ApiTester />} />
-          <Route path="about" element={<About />} />
-          <Route path="contactus" element={<Contactus />} />
-          <Route path="settings" element={<Settings />} />
-          <Route path="bridge" element={<Bridge />} />
-          <Route path="tutorials" element={<Tutorials />} />
-          <Route path="practice" element={<Practice />} />
-          <Route path="contests" element={<Contests />} />
-          <Route path="library" element={<LibraryMain />}>
-            <Route index element={<Library />} />
-            <Route path="e" element={<Elibrary />} />
-            <Route path="p" element={<Plibrary />} />
+      <AuthProvider >
+        <Routes>
+          <Route path="/" element={<HomeHeader />}>{/* element={<HomeHeader />} */}
+          {/* <Route path="/" element={<StudentCalendar />}>element={<HomeHeader />} */}
+            <Route index element={<Home />} />
+            <Route path="api-test" element={<ApiTester />} />
+            <Route path="about" element={<About />} />
+            <Route path="contactus" element={<Contactus />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="bridge" element={<Bridge />} />
+            <Route path="tutorials" element={<Tutorials />} />
+            <Route path="practice" element={<Practice />} />
+            <Route path="contests" element={<Contests />} />
+            <Route path="library" element={<LibraryMain />}>
+              <Route index element={<Library />} />
+              <Route path="e" element={<Elibrary />} />
+              <Route path="p" element={<Plibrary />} />
+            </Route>
+            <Route path="*" element={<NoPage />} />
           </Route>
-          <Route path="*" element={<NoPage />} />
-        </Route>
-        <Route path="logout" element={<Logout />} />
+          <Route path="logout" element={<Logout />} />
 
-        <Route path="test" element={<TestMain />}>
-          <Route index element={<Login />} />
-          <Route path="newacc" element={<User />} />
-          <Route path="sections" element={<Sections />}>
-            <Route path="student" element={<StudentLogin />} />
-            <Route path="teacher" element={<TeacherLogin />} />
-            <Route path="hod" element={<HodLogin />} />
-            <Route path="librarian" element={<LibrarianLogin />} />
-            <Route path="college" element={<CollegeLogin />} />
+          <Route path="test" element={<TestMain />}>
+            <Route index element={<Login />} />
+            <Route path="newacc" element={<User />} />
+            <Route path="sections" element={<Sections />}>
+              <Route path="student" element={<StudentLogin />} />
+              <Route path="teacher" element={<TeacherLogin />} />
+              <Route path="hod" element={<HodLogin />} />
+              <Route path="librarian" element={<LibrarianLogin />} />
+              <Route path="college" element={<CollegeLogin />} />
+            </Route>
           </Route>
-        </Route>
 
-        <Route path="test" element={<AccountsMain />}>
-          <Route index element={<Login />} />
-          <Route path="newacc" element={<User />} />
-          <Route path="sections" element={<Sections />}>
-            <Route path="student" element={<StudentLogin />} />
-            <Route path="teacher" element={<TeacherLogin />} />
-            <Route path="hod" element={<HodLogin />} />
-            <Route path="librarian" element={<LibrarianLogin />} />
-            <Route path="college" element={<CollegeLogin />} />
+          <Route path="account" element={<AccountsMain />}>
+            <Route index element={<Login />} />
+            <Route path="newacc" element={<User />} />
+            <Route path="sections" element={<Sections />}>
+              <Route path="student" element={<StudentLogin />} />
+              <Route path="teacher" element={<TeacherLogin />} />
+              <Route path="hod" element={<HodLogin />} />
+              <Route path="librarian" element={<LibrarianLogin />} />
+              <Route path="college" element={<CollegeLogin />} />
+            </Route>
           </Route>
-        </Route>
-
-        <Route path="student" element={<StudentMain />}>
-          <Route index element={<StudentProfile />} />
-          <Route path="discussion" element={<StudentDiscussion />} />
-          <Route path="assignment" element={<StudentAssignment />} />
-          <Route path="notice" element={<StudentNotice />} />
-          <Route path="progress" element={<StudentProgress />} />
-          <Route path="result" element={<StudentResult />} />
-          <Route path="todo" element={<StudentTodo />} />
-          <Route path="discussion" element={<Discussion />} />
-        </Route>
-      </Routes>
+          
+          {/* PROTECTED STUDENT ROUTE */}
+          <Route
+            path="student"
+            element={auth ? <StudentMain /> : <Navigate to="/account" replace />}
+          >
+            <Route index element={<StudentProfile />} />
+            <Route path="discussion" element={<StudentDiscussion />} />
+            <Route path="assignment" element={<StudentAssignment />} />
+            <Route path="notice" element={<StudentNotice />} />
+            <Route path="progress" element={<StudentProgress />} />
+            <Route path="result" element={<StudentResult />} />
+            <Route path="todo" element={<StudentTodo />} />
+            <Route path="discussion" element={<Discussion />} />
+          </Route>
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 }

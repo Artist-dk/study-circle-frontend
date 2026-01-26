@@ -1,20 +1,57 @@
-import {useRef, useState, React} from 'react';
-import './TestMain.css';
+import axios from "axios";
+import React, { useState } from "react";
 
-export default function TestMain() {
-    const [form1, setFrom1] = useState();
-    const subForm1 = useRef();
+function TestMain() {
+  const [form, setForm] = useState({
+    name: "",
+    email: ""
+  });
+  const [message, setMessage] = useState("");
 
-    return (
-        <>
-            <div className="testMain">
-                <div className="testFromContainer">
-                    <form>
-                        <input type="text"/>
-                        <button ref={subForm1}>Submit</button>
-                    </form>
-                </div>
-            </div> 
-        </>
-    )
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post("http://localhost:8081/register", form);
+      setMessage(res.data.message);
+    } catch (err) {
+      setMessage("Error submitting form");
+    }
+  };
+
+  return (
+    <div style={{ padding: "40px" }}>
+      <h2>Registration Form</h2>
+
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          required
+          onChange={handleChange}
+        />
+        <br /><br />
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          onChange={handleChange}
+        />
+        <br /><br />
+
+        <button type="submit">Register</button>
+      </form>
+
+      <p>{message}</p>
+    </div>
+  );
 }
+
+export default TestMain;

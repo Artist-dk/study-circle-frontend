@@ -1,22 +1,46 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { Outlet, Link, useNavigate} from "react-router-dom";
 
+
+import { Navigate } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
+
+
+const ProtectedRoute = ({ children }) => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+};
+
+// Why replace? -> Prevents user from clicking Back to access protected page.
+// export default ProtectedRoute;
+
 export default function StudentMain() {
   const navigate = useNavigate();
+  const { auth } = useContext(AuthContext);
+  // useEffect(() => {
+  //   checkLoginStatus();
+  // });
 
+  // const checkLoginStatus = () => {
+  //   if (!(Cookies.get('spy'))) {
+  //     // navigate('/account')
+  //     console.log("You are not loged in!")
+  //   }
+  //   console.log("AuthContext.auth: ", auth)
+  // };
   useEffect(() => {
-    checkLoginStatus();
-  });
-
-  const checkLoginStatus = () => {
-    if (!(Cookies.get('spy'))) {
-      // navigate('/account')
-      console.log("You are not loged in!")
+    if (!auth) {
+      console.log("User not authenticated");
+      // navigate("/account"); // optional
     }
-  };
-
+  }, [auth]);
 
   function open(e) {
     e = e.currentTarget;
