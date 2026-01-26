@@ -1,0 +1,166 @@
+.typingmasterbody01 {
+    justify-content: center;
+}
+
+.display01, .text01 {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.display01 span {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.display01 {
+    border-radius: 15px;
+    padding: 15px;
+    height: 100px;
+    width: 530px;
+    overflow: auto;
+    color: white;
+    z-index: 2;
+    justify-self: center;
+    display: flex;
+    position: relative;
+    background-color: #111; /* optional */
+}
+
+.text01 {
+    position: absolute;
+    outline: none;
+    border: none;
+    z-index: 1;
+    color: transparent;
+    background-color: transparent;
+    resize: none;
+    width: 100%;
+    height: 100%;
+}
+
+.highlighter01 {
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+}
+
+.keyboard01 {
+    padding: 10px;
+    background-color: black;
+    width: 531px;
+    height: 180px;
+    border-radius: 10px;
+    border: solid 1px white;
+}
+
+.line01 {
+    padding: 2px;
+    height: 34px;
+    margin: 1px;
+    box-sizing: border-box;
+}
+
+.key01 {
+    min-width: 30px;
+    min-height: 30px;
+    box-sizing: border-box;
+    font-size: 12px;
+    display: inline-flexbox;
+    padding: -4px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+.llkey01 {
+    min-width: 40px;
+    min-height: 30px;
+}
+
+.key01 .top01 {
+    height: 8px;
+    position: relative;
+    top: -5px;
+    font-size: 10px;
+}
+
+.key01 .bottom01 {
+    font-size: 10px;
+    position: relative;
+    top: 5px;
+}
+
+.tabkey01 {
+    width: 50px;
+}
+
+.capslockkey01 {
+    width: 60px;
+}
+
+.lshiftkey01 {
+    width: 80px;
+}
+
+.spacekey01 {
+    width: 215px;
+}
+
+.backspacekey01 {
+    width: 81px;
+}
+
+.backslashkey01 {
+    width: 61px;
+}
+
+.enterkey01 {
+    width: 85px;
+}
+
+.rshiftkey01 {
+    width: 99px;
+}
+
+.keya01 { background-color: rgb(255, 153, 153); }
+.keyb01 { background-color: rgb(134, 211, 255); }
+.keyc01 { background-color: rgb(68, 255, 78); }
+.keyd01 { background-color: rgb(255, 212, 70); }
+
+.wrongtxt01 { color: rgb(255, 92, 92); }
+.correcttxt01 { color: rgb(0, 255, 0); }
+
+.reference01 { display: none; }
+
+#caret01 {
+    background-color: rgb(0, 247, 255);
+    display: inline-block;
+    height: 20px;
+    width: 1px;
+    visibility: hidden;
+}
+
+.handContainter01 {
+    padding: 2px;
+}
+
+.handContainter01 .fingerhighlighter01 {
+    position: relative;
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.handContainter01 .finger1 { top: 20px; }
+.handContainter01 .finger2 { top: 60px; }
+.handContainter01 .finger3 { top: 50px; }
+.handContainter01 .finger4 { top: 40px; }
+.handContainter01 .finger5 { top: 30px; }

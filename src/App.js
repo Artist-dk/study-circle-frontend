@@ -44,6 +44,7 @@ import StudentTodo from './components/student/KeepRecords';
 import Discussion from './components/student/Discussion';
 
 import StudentCalendar from './components/student/StudentCalendar';
+import TestMain from './components/test/TestMain';
 
 export default function App() {
   return (
@@ -69,7 +70,19 @@ export default function App() {
         </Route>
         <Route path="logout" element={<Logout />} />
 
-        <Route path="account" element={<AccountsMain />}>
+        <Route path="test" element={<TestMain />}>
+          <Route index element={<Login />} />
+          <Route path="newacc" element={<User />} />
+          <Route path="sections" element={<Sections />}>
+            <Route path="student" element={<StudentLogin />} />
+            <Route path="teacher" element={<TeacherLogin />} />
+            <Route path="hod" element={<HodLogin />} />
+            <Route path="librarian" element={<LibrarianLogin />} />
+            <Route path="college" element={<CollegeLogin />} />
+          </Route>
+        </Route>
+
+        <Route path="test" element={<AccountsMain />}>
           <Route index element={<Login />} />
           <Route path="newacc" element={<User />} />
           <Route path="sections" element={<Sections />}>

@@ -1,0 +1,60 @@
+/* import {useRef, useState, React} from 'react';
+import './TestMain.css';
+
+export default function TestMain() {
+    const [form1, setFrom1] = useState();
+    const subForm1 = useRef();
+
+    return (
+        <>
+            <div className="testMain">
+                <div className="testFromContainer">
+                    <form>
+                        <input type="text"/>
+                        <button ref={subForm1}>Submit</button>
+                    </form>
+                </div>
+            </div> 
+        </>
+    )
+} */
+
+
+.testMain {
+    background: #eee;
+    color: black;
+    min-height: 100vh;
+    min-width: 100vw;
+    form {}
+    input {
+        color: black !important;
+        background: #eee;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+    button {
+        background: #555 !important;
+        color: white !important;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+    button:hover {
+        background: #111 !important;
+        color: white !important;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px black solid;
+    }
+}
+.testFromContainer {
+    color: black !important;
+    color: black;
+    margin: 30px;
+    padding: 30px;
+    background: white;
+}

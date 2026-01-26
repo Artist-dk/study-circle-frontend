@@ -53,19 +53,18 @@ const GroupDiscussion = () => {
 
   return (
     <div className="gd-wrapper">
-      <h2 className="gd-title">💬 Student Group Discussion</h2>
+      <h2 className="gd-title">Student Group Discussion</h2>
 
       <div className="gd-chat-box">
         {gdMessages.map((msg, index) => (
-          <div
-            key={index}
-            className={`gd-message ${
-              msg.user === currentStudent ? "gd-own-message" : ""
-            }`}
-          >
-            <div className="gd-message-user">{msg.user}</div>
-            <div className="gd-message-text">{msg.text}</div>
-            <div className="gd-message-time">{msg.time}</div>
+          <div className="gd-message">
+              <div key={index} className={`gd-message-box ${ msg.user === currentStudent ? "gd-own-message" : ""}`}>
+              <div className="gd-message-user">{msg.user}</div>
+              <div className="gd-message-text">{msg.text}</div>
+              <div className="gd-message-time">
+                <span>{msg.time}</span>
+              </div>
+            </div>
           </div>
         ))}
         <div ref={gdEndRef} />

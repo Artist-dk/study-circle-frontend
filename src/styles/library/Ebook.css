@@ -8,9 +8,10 @@
       border: solid 1px #444a;
       backdrop-filter: blur(15px);
       background: #8881;
-      max-width: 600px;
       height: fit-content;
-      width: fit-content;
+      width: 280px;
+      border-radius: 10px;
+      padding-top: 10px;
       .ghost {
         width: fit-content;
         display: flex;
@@ -48,6 +49,7 @@
           font-family:'Times New Roman', Times, serif;
           margin-bottom: 7px !important;
           text-align: center;
+          align-self: center;
         }
         .book-details {
           max-width: 300px;
@@ -71,9 +73,26 @@
               cursor: pointer;
               display: block;
             }
+            div button {
+              border: solid 1px black;
+              background: royalblue;
+              padding: 5px;
+              border-radius: 20px;
+              color: #111;
+            }
           }
         }
       }
+    }
+  }
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: lime; */
+    padding: 30px;
+    button {
+      margin: 5px;
     }
   }
 }
